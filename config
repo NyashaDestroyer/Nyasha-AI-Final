@@ -1,1 +1,5 @@
-
+{  
+  "volume": 1.0,  
+  "trigger_words": ["Алиса", "Станция"],  
+  "attack_delay": 0.5  
+}  
