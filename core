@@ -1,1 +1,15 @@
 
+import pygame  
+import random  
+
+def play_audio(file):  
+    pygame.mixer.init()  
+    pygame.mixer.music.load(file)  
+    pygame.mixer.music.set_volume(1.0)  # Макс громкость!  
+    pygame.mixer.music.play()  
+    while pygame.mixer.music.get_busy():  
+        pass  
+
+# Рандомный выбор аудио  
+attacks = ["audio_attacks/moon_04.wav", "audio_attacks/moon_05.wav"]  # Добавь все файлы  
+play_audio(random.choice(attacks))  
