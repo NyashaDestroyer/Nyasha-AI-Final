@@ -1,15 +1,22 @@
+import pygame
+import random
+import time  # Добавили для стабильности
 
-import pygame  
-import random  
+def play_audio(file):
+    pygame.mixer.init()
+    pygame.mixer.music.load(file)
+    pygame.mixer.music.set_volume(1.0)  # Макс громкость!
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        time.sleep(0.1)  # Чтобы не грузил процессор
 
-def play_audio(file):  
-    pygame.mixer.init()  
-    pygame.mixer.music.load(file)  
-    pygame.mixer.music.set_volume(1.0)  # Макс громкость!  
-    pygame.mixer.music.play()  
-    while pygame.mixer.music.get_busy():  
-        pass  
+# Все аудиофайлы из папки audio_attacks
+attacks = [
+    "audio_attacks/moon_04.wav",
+    "audio_attacks/moon_05.wav",
+    "audio_attacks/moon_08.wav",
+    "audio_attacks/moon_09.wav"
+]
 
-# Рандомный выбор аудио  
-attacks = ["audio_attacks/moon_04.wav", "audio_attacks/moon_05.wav"]  # Добавь все файлы  
-play_audio(random.choice(attacks))  
+# Запуск случайного аудио
+play_audio(random.choice(attacks))
