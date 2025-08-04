@@ -1,5 +1,6 @@
-{  
-  "volume": 1.0,  
-  "trigger_words": ["Алиса", "Станция"],  
-  "attack_delay": 0.5  
-}  
+{
+  "volume": 1.0,
+  "trigger_words": ["Алиса", "Станция"],
+  "attack_delay": 0.5
+}
+fix: правильные триггерные слова
